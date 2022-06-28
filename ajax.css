@@ -1,0 +1,32 @@
+/*#output{
+    width: 240px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 10px 0;
+    border: 3px solid yellowgreen;
+    border-radius: 8px;
+}*/
+
+
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 10px;
+}
+
+#post{
+    width: 400px;
+
+}
+
+.post_id , .post_titel , .post_body {
+    margin: 10px 0;
+    padding: 10px 0;
+    border: 1px solid rgb(159, 201, 9);
+    border-radius: 5px;
+}
