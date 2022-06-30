@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        'use strict';
+
+        const elements = {};
+
+        const domMapping = () => {
+            elements.pTags = $('p');
+        }
+
+        const output = () => {
+            // Die html()-Methode hat einen Bug, aufgrund dessen die Inhalte mehrerer Elemente nicht ausgegebenen werden können
+            // console.log(elements.pTags.html());
+
+            // Alternativ kann auf die text()-Methode zurückgegriffen werden
+            // console.log(elements.pTags.text());
+
+            // Falls unbedingt der html-Code benötigt wird, kann auf eine Schleife zurückgegriffen werden
+            elements.pTags.each((index, thing) => {
+                console.log($(thing).html());
+            })
+
+        }
+
+        const init = () => {
+            domMapping();
+            output();
+        }
+
+        // DOMContentLoaded-Eventlistener
+        $(document).ready(init);
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        Meine Webseite
+    </h1>
+    <div class="inhalt">
+        <p class="hallo">
+            Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
+        </p>
+        <p class="welt">
+            Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+        </p>
+        <p class="hallo">
+            Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
+        </p>
+        <p class="mond">
+            Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim.
+        </p>
+    </div>
+</body>
+
+</html>
